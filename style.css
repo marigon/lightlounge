@@ -1,0 +1,705 @@
+/* 
+base
+--------------------------------------- */
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #0f0f0f;
+  font-family:'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+}
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+a{
+  color: #0f0f0f;
+  text-decoration: none;
+}
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+/* 
+common
+--------------------------------------- */
+/* セクションの内側の厚みとセクション間の余白、コンテンツ幅 、backgroung color*/
+
+.section{
+  margin-bottom: 40px;
+  text-align: center;
+}
+.container{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 1330px;
+  max-width: 92%;
+  margin: 0 auto;
+}
+.bgc__orange{
+  background-color: #FBF2EB;
+}
+
+
+/* 
+style
+--------------------------------------- */
+/* セクションタイトル、セクションハイライト文装飾、ボタン装飾、フレックスボックス */
+
+.section__title {
+  margin-bottom: 30px;
+  font-size: 4rem;
+  letter-spacing: 0.1%;
+}
+
+
+h4{
+  font-size: 3.6rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.section__highlight{
+  display: inline-block;
+  position: relative;
+}
+
+.section__highlight::before {
+  position: absolute;
+  bottom: -25px;
+  left: calc(50% - 45px);
+  width: 90px;
+  height: 100%;
+  border-bottom: 7px solid #73D0C2;
+  content: "";
+}
+
+.btn{
+  color: #0f0f0f;
+  background-color:rgba(0,0,0,0);
+  border:5px solid #978D86;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 2.4rem;
+  border-radius: 35px;
+  display: inline-block;
+  font-weight: bold;
+}
+.btn:hover{
+  color: #fff;
+  background-color:#978D86;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+.flex--cen{
+  justify-content: center;
+}
+.flex--bet{
+  justify-content: space-between;
+}
+.flex--col{
+  flex-direction: column;
+}
+.flex--wra{
+  flex-wrap: wrap;
+}
+
+/* header------------------------------ */
+
+#header{
+  background: rgba(255,255,255,0);
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  transition: .5s;
+}
+.header--transform{
+  color: #0f0f0f;
+}
+.header--transform a{
+  color: #0f0f0f;
+}
+.hide{
+  transform: translateY(-100%);
+}
+.gnav__menu{
+  width: 1062px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.gnav__menu__item__link{
+  color: #fff;
+  line-height: 80px;
+  position: relative;
+  display: inline-block;
+  padding: 2px 2px 0;
+  transition: .2s;
+}
+
+.gnav__menu__item__link::after {
+  position: absolute;
+  bottom: 15px;
+  left: 2px;
+  content: '';
+  width: calc(100% - 4px);
+  height: 5px;
+  background: #73D0C2;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+
+.gnav__menu__item__link:hover::after {
+  transform: scale(1, 1);
+}
+
+.btn_trigger{
+  display: none;
+}
+
+
+/* top--------------------------------- */
+#top{
+  background-image: url(../img/top.png);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.top__items{
+  height: 100%;
+  padding-bottom: 6rem;
+}
+.top__logo{
+  width: 303px;
+}
+.top__items p{
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.8rem;
+}
+
+/* アニメーション設定 */
+.top__arrow__wrap {
+  position: absolute;
+  right: 6.0rem;
+  bottom: 2.0rem;
+  height: 200px
+}
+
+.top__arrow__inner p {
+  font-size: 14px;
+  text-align: end;
+  transform: rotate(90deg);
+  color: #fff;
+}
+
+.top__arrow {
+  width: 3px;
+  height: 90px;
+  margin: 40px auto 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.top__arrow::before {
+  content: '';
+  width: 3px;
+  height: 90px;
+  margin: 50px auto 0;
+  background-color: #fff;
+  position: absolute;
+  top: -150px;
+  left: 0;
+  animation: arrow 2.5s ease 0s infinite normal;
+}
+
+@keyframes arrow {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  60% {
+    transform: translate3d(-50%, 100px, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 100px, 0);
+  }
+}
+
+/* about--------------------------------- */
+.about__highlight{
+  line-height: 1.7;
+  letter-spacing: 0.4rem;
+}
+.about__text__top{
+  margin-top: 30px;
+  font-weight: bold;
+}
+.about__text{
+  margin-top: 30px;
+}
+.about__text__sentence{
+  margin-top: 60px;
+}
+.about__img{
+  margin-top: 100px;
+}
+
+/* plan----------------------------- */
+
+.plan__items{
+  width: 1043px;
+  max-width: 100%;
+  margin: 0 auto;
+  
+}
+.plan__item{
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+.plan__item__title ,.plan__item__time{
+  font-size: 3.0rem;
+}
+
+.plan__item__img{
+  width: 220px;
+  margin-bottom: 35px;
+}
+.plan__item__price{
+  border-bottom:7px solid #73D0C2;
+  font-family: 'Roboto';
+  font-size: 4.0rem;
+  margin-top: 40px;
+  color: #73D0C2;
+  display: inline-block;
+}
+
+.plan__item__time{
+  margin-top: 20px;
+}
+
+/* floor---------------------------------- */
+.floor__mapimg{
+  margin-bottom: 60px;
+}
+.floor__imgs{
+  width: 1182px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.floor__img{
+  width: 366px;
+  height: 373px;
+  margin-top: 30px;
+}
+.floor__img__center{
+margin-top: 113px;
+}
+.floor__img__left,.floor__img__right{
+margin-bottom:113px;
+}
+/* service---------------------------------- */
+.service__items{
+  width: 950px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.service__item{
+  margin: 0 auto 40px;
+
+}
+.service__item__img{
+  width: 160px;
+  margin-bottom: 20px;
+}
+.service__text{
+  margin-top: 20px;
+}
+
+/* gallery------------------------------------ */
+.gallery__imgs{
+  width: 1182px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.gallery__img{
+  width: 571px;
+  margin-bottom: 20px;
+}
+.gallery__text{
+  margin-bottom: 60px;
+}
+.gallery__text__top{
+  margin-bottom: 15px;
+}
+
+/* news------------------------------------- */
+.news__items{
+  width: 1058px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.news__items li{
+  margin: 0 auto 30px;
+}
+.news__items li p{
+  text-align: left;
+}
+.news__img{
+  width: 318px;
+  margin-bottom: 30px;
+}
+.news__btn{
+  padding: 15px 65px;
+}
+
+/* info-------------------------------------- */
+.info__contents{
+  width: 1203px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.info__logo{
+  width: 231px;
+}
+.info__text{
+  margin-left: 110px;
+}
+.info__text li{
+  margin-bottom: 15px;
+}
+#infomation iframe {
+  width: 640px;
+  height: 480px;
+  max-width: 100%;
+}
+
+/* faq--------------------------------------- */
+.faq__btns{
+  width: 730px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.faq__btn{
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+
+.faq__text{
+  border: 5px solid #978D86;
+  border-radius: 35px;
+  padding: 60px 70px 30px;
+  width: 1166px;
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: left;
+}
+.faq__text li{
+  margin-bottom: 30px;
+}
+.faq__text p{
+  margin-bottom: 10px;
+}
+
+/* js */
+.faq__btns .faq__btn--active {
+  color: #fff;
+  background: #978D86;
+  cursor: auto;
+}
+.faq__text{
+  display: none;
+}
+.faq__text--show {
+  display: block;
+}
+
+
+/* footer---------------------------------- */
+footer{
+  background-color: #978D86;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+footer li{
+  margin-bottom: 30px;
+}
+footer ul{
+  margin-bottom: 50px;
+}
+.footer__link:hover{
+  color: #fff;
+}
+
+
+
+/* 
+responsible
+------------------------------------------------------ */
+
+
+@media screen and (max-width:1024px){
+/*画面幅が1024pxまでの時(ipad pro縦)*/
+/* 写真位置調整 */
+
+#top{
+  background-image: url(../img/top_mobile.png);
+}
+.plan__item{
+  margin: 0 auto 50px;
+  }
+
+.floor__imgs{
+  justify-content: center;
+}
+.floor__img{
+  margin: 20px 10px 0;
+}
+.floor__img__left,.floor__img__right{
+  margin-bottom:0px;
+}
+.gallery__imgs{
+  justify-content: center;
+}
+.info__contents{
+  justify-content: center;
+}
+.info__text{
+  margin: 0 auto;
+}
+
+}
+
+
+
+@media screen and (max-width:768px){
+/*画面幅が768pxまでの時(ipad縦)*/
+
+body{
+  font-size: 1.4rem;
+}
+h4{
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+}
+.section__title{
+  font-size: 2.4rem;
+}
+.section{
+  margin-bottom: 10px;
+}
+.container{
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.bgc__orange__sp{
+  background-color:#FBF2EB;
+}
+
+/* header------------------------------- */
+#header{
+  height: 92px;
+}
+
+.top__arrow__wrap {
+  right: 1.0rem;
+  bottom: 1.0rem;
+  height: 200px
+}
+
+/* top--------------------------------- */
+
+/* #top{
+  background-image: url(../img/top_mobile.png);
+} */
+.top__items{
+  padding-bottom: 10rem;
+}
+
+/* about--------------------------------- */
+.about__highlight{
+  line-height: 1.4;
+  letter-spacing: 0.5rem;
+  margin-top: 20px;
+}
+.about__text__sentence{
+  margin-top: 20px;
+}
+.about__img{
+  margin-top: 40px;
+}
+
+/* plan----------------------------- */
+
+.plan__item__img{
+  margin-bottom: 20px;
+}
+.plan__item__price{
+  margin-top: 18px;
+}
+
+.plan__item__time{
+  margin-top: 15px;
+}
+
+/* floor---------------------------------- */
+
+.floor__mapimg{
+  margin-bottom: 40px;
+}
+
+/* service------------------------------ */
+
+.service__item{
+  margin-bottom: 30px;
+}
+.service__item__img{
+  margin-bottom: 10px;
+}
+
+/* gallery------------------------------- */
+
+.gallery__text{
+  margin-bottom: 20px;
+}
+
+/* news--------------------------------- */
+.news__img{
+  margin-bottom: 10px;
+}
+
+/* info-------------------------------- */
+#infomation iframe {
+  height: 300px;
+}
+
+/* faq--------------------------------- */
+.faq__btns{
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.faq__btn{
+  margin-bottom: 10px;
+}
+.faq__text{
+  padding: 30px 20px 0px;
+}
+#faq{
+  margin-bottom: 0px;
+}
+
+/* footer------------------------------ */
+footer{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+footer li{
+  margin-bottom: 20px;
+}
+footer ul{
+  margin-bottom: 40px;
+}
+
+/* ハンバーガーメニュー */
+.gnav{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color:#978D86;
+  }
+
+.gnav__menu {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  }
+  
+  .gnav__menu__item__link{
+    color: #fff;
+    font-size: 2.0rem;
+    line-height: 70px;
+    font-weight: bold;
+  }
+
+.btn__trigger{
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  top: 10px;
+  right: 10px;
+}
+.btn__bar__wrap{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.bar{
+  width: 22px;
+  height: 3px;
+  background-color: #978D86;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bar__top{
+  top: 20px;
+}
+.bar__mid{
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.bar__bottom{
+  bottom: 20px;
+}
+
+.btn__trigger.close .bar__top{
+  transform: translate(-50%,9px) rotate(45deg);
+  transition: transform .3s;
+}
+.btn__trigger.close .bar__mid{
+  opacity: 0;
+  transition: opacity .3s;
+}
+.btn__trigger.close .bar__bottom{
+  transform: translate(-50%,-8px) rotate(-45deg);
+  transition: transform .3s;
+}
+body.noscroll{
+  overflow: hidden;
+}
+  }
+  
+
